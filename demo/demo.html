@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=no, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coral Demo5</title>
+    <script src="../dist/coral-demo-sdk.min.js"
+            id="coral_js" env="local"></script>
+</head>
+<body>
+Coral
+<div id="loader">
+
+</div>
+</body>
+<script type="application/javascript">
+
+  let ts = 1414587457;
+  let noncestr = "xxadsa";
+  // 从自己的服务器上请求一个signature
+  // 现在生成一个测试用的
+  window.onload = function () {
+    let coral = new CoralDemo({
+      appId: 108,
+      timestamp: ts,
+      nonceStr: noncestr,
+      signature: "d27cf891cadf97cc268b02088d8cd63f",
+      jsApiList: [],
+      userParams: {
+        account_id: "",
+        imei: ""
+      }
+    });
+    coral.ready(async () => {
+      coral.getTaskTest();
+    });
+  }
+
+
+</script>
+</html>
